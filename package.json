@@ -1,0 +1,127 @@
+{
+  "name": "react-cool-card",
+  "version": "0.0.1",
+  "description": "React cool card component",
+  "main": "dist/index.cjs.js",
+  "module": "dist/index.esm.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "npm-run-all -s clean build:rollup",
+    "build:rollup": "rollup -c",
+    "test": "jest",
+    "format": "npm-run-all -s format:*",
+    "format:fix": "prettier --write './src/**/*.{ts,tsx,js,json}'",
+    "format:lint": "eslint ./src --ext .ts,.tsx",
+    "clean": "rimraf ./dist",
+    "release": "np",
+    "storybook": "start-storybook -s ./public  -p 6006",
+    "build-storybook": "build-storybook"
+  },
+  "keywords": [
+    "react",
+    "react-component",
+    "card",
+    "component",
+    "react-component"
+  ],
+  "files": [
+    "dist"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kqito/react-cool-card.git"
+  },
+  "author": "Nakagawa kaito",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kqito/react-cool-card/issues"
+  },
+  "homepage": "https://github.com/kqito/react-cool-card#readme",
+  "dependencies": {
+    "@emotion/stylis": "^0.8.5"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.8.3",
+    "@babel/core": "^7.8.3",
+    "@babel/polyfill": "^7.8.3",
+    "@babel/preset-env": "^7.8.3",
+    "@babel/preset-react": "^7.8.3",
+    "@babel/preset-typescript": "^7.8.3",
+    "@rollup/plugin-buble": "^0.21.0",
+    "@rollup/plugin-node-resolve": "^7.0.0",
+    "@storybook/addon-actions": "^5.3.8",
+    "@storybook/addon-docs": "^5.3.9",
+    "@storybook/addon-info": "^5.3.9",
+    "@storybook/addon-knobs": "^5.3.9",
+    "@storybook/addon-links": "^5.3.8",
+    "@storybook/addons": "^5.3.8",
+    "@storybook/preset-typescript": "^1.2.0",
+    "@storybook/react": "^5.3.8",
+    "@storybook/source-loader": "^5.3.9",
+    "@testing-library/react": "^9.4.0",
+    "@types/jest": "^24.9.0",
+    "@types/react": "^16.9.17",
+    "@types/react-dom": "^16.9.5",
+    "@types/storybook__addon-info": "^5.2.1",
+    "@typescript-eslint/eslint-plugin": "^2.16.0",
+    "@typescript-eslint/parser": "^2.16.0",
+    "babel-jest": "^25.1.0",
+    "babel-loader": "^8.0.6",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb": "^18.0.1",
+    "eslint-config-prettier": "^6.9.0",
+    "eslint-plugin-import": "^2.20.0",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-prettier": "^3.1.2",
+    "eslint-plugin-react": "^7.18.0",
+    "eslint-plugin-react-hooks": "^1.7.0",
+    "fork-ts-checker-webpack-plugin": "^4.0.2",
+    "hasky": "^3.0.2",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^24.9.0",
+    "jest-dom": "^4.0.0",
+    "np": "^5.2.1",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^1.19.1",
+    "prop-types": "^15.7.2",
+    "react": "^16.12.0",
+    "react-docgen-typescript-loader": "^3.6.0",
+    "react-dom": "^16.12.0",
+    "rimraf": "^3.0.0",
+    "rollup": "^1.29.0",
+    "rollup-plugin-babel": "^4.3.3",
+    "rollup-plugin-postcss": "^2.0.4",
+    "rollup-plugin-typescript2": "^0.25.3",
+    "storybook-addon-react-docgen": "^1.2.28",
+    "ts-jest": "^24.3.0",
+    "ts-loader": "^6.2.1",
+    "typescript": "^3.7.5"
+  },
+  "jest": {
+    "transform": {
+      "^.+\\.ts?(x)$": "ts-jest",
+      "^.+\\.[tj]sx?$": "babel-jest",
+      "^.+\\.mdx$": "@storybook/addon-docs/jest-transform-mdx"
+    },
+    "globals": {
+      "ts-jest": {
+        "tsConfig": "tsconfig.json"
+      }
+    }
+  },
+  "lint-staged": {
+    "*.{ts,tsx,js,jsx,json}": [
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "list-staged",
+      "pre-push": "npm test",
+      "...": "..."
+    }
+  }
+}

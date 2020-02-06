@@ -1,0 +1,1 @@
+export { CoolCard } from "./CoolCard";
