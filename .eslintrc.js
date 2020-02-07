@@ -27,6 +27,7 @@ module.exports = {
     sourceType: "module"
   },
   rules: {
+    "@typescript-eslint/explicit-function-return-type": 0,
     "import/extensions": ["error", "always", { ts: "never", tsx: "never" }],
     "import/prefer-default-export": "off",
     "import/no-extraneous-dependencies": [

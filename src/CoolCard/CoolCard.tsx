@@ -1,15 +1,9 @@
 import React from "react";
 import { StyleController } from "../utils/StyleController";
 import { generateDefaultStyle } from "./CoolCardStyles";
+import { CoolCardProps } from "./CoolCardTypes";
 
-interface Props {
-  text: string;
-  title?: string;
-  image?: string;
-  alt?: string;
-}
-
-export class CoolCard extends React.PureComponent<Props> {
+export class CoolCard extends React.PureComponent<CoolCardProps> {
   componentDidMount(): void {
     CoolCard.styleController.incrementMountCount();
   }
@@ -24,16 +18,34 @@ export class CoolCard extends React.PureComponent<Props> {
   );
 
   render(): JSX.Element {
-    const { text, title, image, alt } = this.props;
+    const {
+      image,
+      title,
+      imageAlt,
+      description,
+      Contents,
+      color,
+      size,
+      expandSize
+    } = this.props;
 
     return (
       <div className="CoolCard">
-        {image && (
-          <img className="CoolCard-image" src={image} alt={alt || ""} />
-        )}
-        <div className="CoolCard-descriptions">
-          {title && <p className="CoolCard-title">{title}</p>}
-          <p className="CoolCard-text">{text}</p>
+        <div className="CoolCard-header">
+          <img
+            className="CoolCard-header-image"
+            src={image}
+            alt={imageAlt || ""}
+          />
+          <div className="CoolCard-header-text">
+            <p className="CoolCard-header-text__title">{title}</p>
+            {description && (
+              <p className="CoolCard-header-description">{description}</p>
+            )}
+          </div>
+        </div>
+        <div className="CoolCard-content">
+          <Contents />
         </div>
       </div>
     );
