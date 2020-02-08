@@ -14,4 +14,6 @@ const presets = [
   "@babel/preset-typescript"
 ];
 
-module.exports = { presets };
+const plugins = ["babel-plugin-styled-components"];
+
+module.exports = { presets, plugins };

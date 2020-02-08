@@ -38,7 +38,7 @@
   },
   "homepage": "https://github.com/kqito/react-cool-card#readme",
   "dependencies": {
-    "@emotion/stylis": "^0.8.5"
+    "styled-components": "^5.0.1"
   },
   "devDependencies": {
     "@babel/cli": "^7.8.3",
@@ -63,10 +63,12 @@
     "@types/react": "^16.9.17",
     "@types/react-dom": "^16.9.5",
     "@types/storybook__addon-info": "^5.2.1",
+    "@types/styled-components": "^4.4.2",
     "@typescript-eslint/eslint-plugin": "^2.16.0",
     "@typescript-eslint/parser": "^2.16.0",
     "babel-jest": "^25.1.0",
     "babel-loader": "^8.0.6",
+    "babel-plugin-styled-components": "^1.10.7",
     "babel-polyfill": "^6.26.0",
     "babel-preset-env": "^1.7.0",
     "eslint": "^6.8.0",

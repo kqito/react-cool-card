@@ -11,17 +11,17 @@ const TestContents = () => <div>hi</div>;
 const defaults: CoolCardProps = {
   image: "/test1.jpg",
   title: "This is a title.",
+  Contents: () => TestContents,
   imageAlt: "This is a title alt.",
   description: "This is a description.",
-  Contents: () => TestContents,
   color: "red",
   size: {
     width: "400px",
     height: "300px"
   },
   expandSize: {
-    width: "400px",
-    height: "300px"
+    width: "90%",
+    height: "90%"
   }
 };
 
@@ -34,8 +34,10 @@ storiesOf("CoolCard", module)
     <CoolCard
       image={defaults.image}
       title={defaults.title}
+      Contents={defaults.Contents}
       imageAlt={defaults.imageAlt}
       description={defaults.description}
-      Contents={defaults.Contents}
+      size={defaults.size}
+      expandSize={defaults.expandSize}
     />
   ));

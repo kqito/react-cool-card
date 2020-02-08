@@ -4,7 +4,7 @@ type Size = {
 };
 
 /* eslint @typescript-eslint/no-explicit-any: 0 */
-export interface CoolCardProps {
+export type CoolCardProps = {
   image: string;
   title: string;
   Contents: (...args: any) => JSX.Element;
@@ -13,4 +13,4 @@ export interface CoolCardProps {
   color?: string;
   size?: Size;
   expandSize?: Size;
-}
+};
