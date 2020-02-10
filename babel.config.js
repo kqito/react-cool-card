@@ -6,8 +6,7 @@ const presets = [
         chrome: "58",
         ie: "11"
       },
-      useBuiltIns: "usage",
-      corejs: 3
+      useBuiltIns: "usage"
     }
   ],
   "@babel/preset-react",

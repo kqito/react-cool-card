@@ -7,7 +7,7 @@ type Size = {
 export type CoolCardProps = {
   image: string;
   title: string;
-  Contents: (...args: any) => JSX.Element;
+  contents: JSX.Element;
   imageAlt?: string;
   description?: string;
   color?: string;

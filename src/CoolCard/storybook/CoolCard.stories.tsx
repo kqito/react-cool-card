@@ -6,12 +6,12 @@ import { CoolCard } from "../CoolCard";
 import { CoolCardProps } from "../CoolCardTypes";
 import mdx from "./CoolCard.mdx";
 
-const TestContents = () => <div>hi</div>;
+const TestContents = () => <p>hi</p>;
 
 const defaults: CoolCardProps = {
   image: "/test1.jpg",
   title: "This is a title.",
-  Contents: () => TestContents,
+  contents: TestContents(),
   imageAlt: "This is a title alt.",
   description: "This is a description.",
   color: "red",
@@ -20,8 +20,8 @@ const defaults: CoolCardProps = {
     height: "300px"
   },
   expandSize: {
-    width: "90%",
-    height: "90%"
+    width: "90vw",
+    height: "90vh"
   }
 };
 
@@ -34,10 +34,15 @@ storiesOf("CoolCard", module)
     <CoolCard
       image={defaults.image}
       title={defaults.title}
-      Contents={defaults.Contents}
-      imageAlt={defaults.imageAlt}
+      contents={defaults.contents}
+    />
+  ))
+  .add("Test", () => (
+    <CoolCard
+      image={defaults.image}
+      title={defaults.title}
+      contents={defaults.contents}
       description={defaults.description}
-      size={defaults.size}
       expandSize={defaults.expandSize}
     />
   ));
