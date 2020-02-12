@@ -1,69 +1,53 @@
 import React from "react";
 import { ThemeProvider } from "styled-components";
-import { StyleController } from "../utils/StyleController";
-import { useHooks, isActive } from "./CoolCardHooks";
 import { CoolCardProps } from "./CoolCardTypes";
 import {
-  CoolCardWrapper,
-  Header,
-  HeaderImage,
-  HeaderText,
-  HeaderTitle,
-  HeaderDescription,
-  ContentWrapper
+  CoolCardDiv,
+  CoolCardA,
+  Image,
+  Text,
+  SubTitle,
+  Title,
+  DescriptionWrapper,
+  Description
 } from "./CoolCardStyles";
 
 export const CoolCard: React.FC<CoolCardProps> = (props: CoolCardProps) => {
-  const {
-    image,
-    title,
-    imageAlt,
-    description,
-    contents,
-    color,
-    size,
-    expandSize
-  } = props;
+  const { image, title, description, subtitle, link, imageAlt } = props;
 
-  const { isExpand, setExpand } = useHooks();
+  const CoolCardContents = (
+    <>
+      <Image src={image} alt={imageAlt || ""} />
+      <Text>
+        {subtitle && <SubTitle>{subtitle}</SubTitle>}
+        <Title>{title}</Title>
+        <DescriptionWrapper>
+          <Description>{description}</Description>
+        </DescriptionWrapper>
+      </Text>
+    </>
+  );
 
   return (
     <ThemeProvider theme={props}>
-      <CoolCardWrapper
-        className={`CoolCard ${isActive(isExpand)}`}
-        onClick={() => setExpand(!isExpand)}
-      >
-        <Header>
-          <HeaderImage
-            className="CoolCard-header-image"
-            src={image}
-            alt={imageAlt || ""}
-          />
-          <HeaderText>
-            <HeaderTitle>{title}</HeaderTitle>
-            {description && (
-              <HeaderDescription>{description}</HeaderDescription>
-            )}
-          </HeaderText>
-        </Header>
-        <ContentWrapper className={`CoolCard ${isActive(isExpand)}`}>
-          {contents}
-        </ContentWrapper>
-      </CoolCardWrapper>
+      {link ? (
+        <CoolCardA href={link} rel="noopener noreferrer" target="_blank">
+          {CoolCardContents}
+        </CoolCardA>
+      ) : (
+        <CoolCardDiv>{CoolCardContents}</CoolCardDiv>
+      )}
     </ThemeProvider>
   );
 };
 
 CoolCard.defaultProps = {
+  subtitle: "",
+  link: "",
   imageAlt: "",
-  description: "",
-  color: "red",
-  size: {
-    width: "400px",
-    height: "300px"
-  },
-  expandSize: {
-    width: "100%",
-    height: "100%"
-  }
+  backgroundColor: "#ffffff",
+  color: "#000000",
+  animationDuration: 500,
+  width: "400px",
+  height: "300px"
 };

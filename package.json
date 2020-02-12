@@ -25,7 +25,8 @@
     "react-component"
   ],
   "files": [
-    "dist"
+    "dist",
+    "README.md"
   ],
   "repository": {
     "type": "git",
@@ -38,6 +39,7 @@
   },
   "homepage": "https://github.com/kqito/react-cool-card#readme",
   "dependencies": {
+    "polished": "^3.4.4",
     "styled-components": "^5.0.1"
   },
   "devDependencies": {

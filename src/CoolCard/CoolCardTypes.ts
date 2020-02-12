@@ -1,16 +1,13 @@
-type Size = {
-  width: string;
-  height: string;
-};
-
-/* eslint @typescript-eslint/no-explicit-any: 0 */
 export type CoolCardProps = {
   image: string;
   title: string;
-  contents: JSX.Element;
+  description: string;
+  subtitle?: string;
+  link?: string;
   imageAlt?: string;
-  description?: string;
+  backgroundColor?: string;
   color?: string;
-  size?: Size;
-  expandSize?: Size;
+  animationDuration?: number;
+  width?: string;
+  height?: string;
 };

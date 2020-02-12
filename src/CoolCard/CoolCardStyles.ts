@@ -1,74 +1,112 @@
-import styled, { keyframes } from "styled-components";
+import styled from "styled-components";
+import { rgba } from "polished";
 
-const CoolCardWrapper = styled.div`
-  position: relative;
-  width: ${props => props.theme.size.width};
-  max-height: ${props => props.theme.size.height};
-  display: inline-block;
-  border-radius: 20px;
-  overflow: hidden;
-  box-shadow: 5px 5px 10px -5px;
-
-  transition: 200ms ease-in;
-
-  &.active {
-    box-shadow: 10px 10px 15px -10px;
-    width: ${props => props.theme.expandSize.width};
-    max-height: ${props => props.theme.expandSize.height};
-    transition: width 400ms ease-in, max-height 300ms 300ms ease-in;
-    z-index: 2;
-  }
-
-  * {
-    box-sizing: border-box;
-    font-family: "Helvetica", "Arial", "Hiragino Kaku Gothic ProN",
-      "ヒラギノ角ゴ ProN W3", "メイリオ", Meiryo, "ＭＳ Ｐゴシック",
-      "MS PGothic" sans-serif;
-  }
-`;
-
-const Header = styled.div`
-  position: relative;
+const Image = styled.img`
   width: 100%;
-`;
-
-const HeaderImage = styled.img`
-  width: 100%;
-  height: ${props => props.theme.size.height};
-  border-radius: 20px;
+  height: ${props => props.theme.height};
   object-fit: cover;
   z-index: -1;
+
+  transition: ${props => props.theme.animationDuration}ms;
 `;
 
-const HeaderText = styled.div`
+const Text = styled.div`
   position: absolute;
   left: 0;
   bottom: 0;
   width: 100%;
-  padding: 10px;
-  background-color: rgba(244, 244, 244, 0.9);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  z-index: 2;
+
+  padding: 1.25rem;
+  background-color: ${props => props.theme.backgroundColor};
 `;
 
-const HeaderTitle = styled.p`
+const SubTitle = styled.p`
   text-overflow: ellipsis;
   white-space: nowrap;
-  font-weight: bold;
-  font-size: 1.2rem;
+  opacity: 0.7;
+  margin: 0 0 0.3rem 0;
 `;
 
-const HeaderDescription = styled.p`
+const Title = styled.p`
+  font-weight: bold;
+  font-size: 1.8rem;
+  margin: 0;
+`;
+
+const DescriptionWrapper = styled.div`
+  transition: ${props => props.theme.animationDuration}ms;
+  opacity: 0;
+  max-height: 0;
+`;
+
+const Description = styled.p`
   overflow-wrap: break-word;
   word-wrap: break-word;
+  margin: 0.3rem 0 0 0;
 `;
 
-const ContentWrapper = styled.div``;
+const BaseCoolCard = styled.div`
+  position: relative;
+  width: ${props => props.theme.width};
+  height: ${props => props.theme.height};
+  display: inline-block;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  box-shadow: 5px 5px 10px -5px black;
+
+  transition: ${props => props.theme.animationDuration}ms;
+
+  &:after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    transition: ${props => props.theme.animationDuration}ms;
+  }
+
+  &:hover {
+    box-shadow: 10px 10px 15px -10px black;
+
+    &:after {
+      background-color: ${props => rgba(props.theme.backgroundColor, 0.3)};
+    }
+
+    ${Image} {
+      transform: scale(1.1);
+    }
+
+    ${DescriptionWrapper} {
+      opacity: 1;
+      max-height: ${props => props.theme.height};
+    }
+  }
+
+  * {
+    box-sizing: border-box;
+    color: ${props => props.theme.color};
+  }
+`;
+
+const CoolCardDiv = styled(BaseCoolCard)``;
+
+const CoolCardA = styled(BaseCoolCard.withComponent("a"))`
+  cursor: pointer;
+  text-decoration: none;
+`;
 
 export {
-  CoolCardWrapper,
-  Header,
-  HeaderImage,
-  HeaderText,
-  HeaderTitle,
-  HeaderDescription,
-  ContentWrapper
+  CoolCardDiv,
+  CoolCardA,
+  Image,
+  Text,
+  SubTitle,
+  Title,
+  DescriptionWrapper,
+  Description
 };
