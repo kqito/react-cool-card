@@ -6,12 +6,12 @@ import { CoolCard } from "../CoolCard";
 import { CoolCardProps } from "../CoolCardTypes";
 import mdx from "./CoolCard.mdx";
 
-const defaults: CoolCardProps = {
-  image: "/test1.jpg",
+const samples: CoolCardProps = {
+  image: "/test.jpg",
   title: "This is a title.",
   description: "This is a description.",
   subtitle: "This is a subtitle.",
-  link: "https://github.com/kqito/cool-card",
+  link: "https://github.com/kqito/react-cool-card",
   imageAlt: "This is a imageAlt",
   backgroundColor: "#ffffff",
   color: "#000000",
@@ -26,139 +26,148 @@ storiesOf("CoolCard", module)
     docs: { page: mdx }
   })
   .add("Samples", () => (
-    <CoolCard
-      image={text("Image", defaults.image)}
-      title={text("Title", defaults.title)}
-      description={text("Description", defaults.description)}
-      subtitle={defaults.subtitle}
-    />
+    <div>
+      <CoolCard
+        image="/corgi.jpg"
+        title="A Corgi is so Cute !!"
+        description="It makes me feel appeased..."
+        backgroundColor="#f48fb1"
+        color="#fafafa"
+      />
+      <CoolCard
+        image="/github.png"
+        title="Source Code"
+        description="React-cool-card was developed by kqito. If you like, please use it !!!"
+        link={samples.link}
+        subtitle={samples.link}
+        backgroundColor="#ffb74d"
+        color="#fafafa"
+        width="800px"
+        height="400px"
+      />
+    </div>
   ))
   .add("Link", () => (
     <CoolCard
-      image={defaults.image}
-      title={defaults.title}
-      description={defaults.description}
-      subtitle={defaults.subtitle}
-      link={text("Link", defaults.link)}
+      image={samples.image}
+      title={samples.title}
+      description={samples.description}
+      subtitle={samples.subtitle}
+      link={text("Link", samples.link)}
     />
   ))
   .add("SubTitle", () => (
-    <>
+    <div>
       <CoolCard
-        image={defaults.image}
-        title={defaults.title}
-        description={defaults.description}
-        subtitle={text("Subtitle1", defaults.subtitle)}
+        image={samples.image}
+        title={samples.title}
+        description={samples.description}
+        subtitle={text("Subtitle1", samples.subtitle)}
       />
       <CoolCard
-        image={defaults.image}
-        title={defaults.title}
-        description={defaults.description}
+        image={samples.image}
+        title={samples.title}
+        description={samples.description}
         subtitle={text("Subtitle2", "OVERRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR")}
       />
-    </>
+    </div>
   ))
   .add("Image", () => (
-    <>
+    <div>
       <CoolCard
-        image={text("Image1", defaults.image)}
-        title={defaults.title}
-        description={defaults.description}
-      />
-      <CoolCard
-        image={text("Image2", "/test2.jpg")}
-        title={defaults.title}
-        description={defaults.description}
+        image={text("Image1", samples.image)}
+        title={samples.title}
+        description={samples.description}
       />
       <CoolCard
         image={text("Image3", "fake.jpg")}
-        title={defaults.title}
-        description={defaults.description}
-        imageAlt={text("ImageAlt3", defaults.imageAlt)}
+        title={samples.title}
+        description={samples.description}
+        imageAlt={text("ImageAlt3", samples.imageAlt)}
       />
-    </>
+    </div>
   ))
   .add("Color", () => (
-    <>
+    <div>
       <CoolCard
-        image={defaults.image}
-        title={defaults.title}
-        description={defaults.description}
-        subtitle={defaults.subtitle}
+        image={samples.image}
+        title={samples.title}
+        description={samples.description}
+        subtitle={samples.subtitle}
         backgroundColor={text(
           "Default background color",
-          defaults.backgroundColor
+          samples.backgroundColor
         )}
-        color={text("Default font color", defaults.color)}
+        color={text("Default font color", samples.color)}
       />
       <CoolCard
-        image={defaults.image}
-        title={defaults.title}
-        description={defaults.description}
-        subtitle={defaults.subtitle}
+        image={samples.image}
+        title={samples.title}
+        description={samples.description}
+        subtitle={samples.subtitle}
         backgroundColor={text("Custom background color1", "#212121")}
         color={text("Custom font color1", "#fafafa")}
       />
       <CoolCard
-        image={defaults.image}
-        title={defaults.title}
-        description={defaults.description}
-        subtitle={defaults.subtitle}
+        image={samples.image}
+        title={samples.title}
+        description={samples.description}
+        subtitle={samples.subtitle}
         backgroundColor={text("Custom background color2", "#f48fb1")}
         color={text("Custom font color2", "#fafafa")}
       />
-    </>
+    </div>
   ))
   .add("Animation Duration", () => (
-    <>
+    <div>
       <CoolCard
-        image={defaults.image}
-        title={defaults.title}
-        description={defaults.description}
-        subtitle={defaults.subtitle}
+        image={samples.image}
+        title={samples.title}
+        description={samples.description}
+        subtitle={samples.subtitle}
         animationDuration={number("Default animation duration", 500)}
       />
       <CoolCard
-        image={defaults.image}
-        title={defaults.title}
-        description={defaults.description}
-        subtitle={defaults.subtitle}
+        image={samples.image}
+        title={samples.title}
+        description={samples.description}
+        subtitle={samples.subtitle}
         animationDuration={number("Custom animation duration1", 200)}
       />
       <CoolCard
-        image={defaults.image}
-        title={defaults.title}
-        description={defaults.description}
-        subtitle={defaults.subtitle}
+        image={samples.image}
+        title={samples.title}
+        description={samples.description}
+        subtitle={samples.subtitle}
         animationDuration={number("Custom animation duration2", 2000)}
       />
-    </>
+    </div>
   ))
   .add("Size", () => (
-    <>
+    <div>
       <CoolCard
-        image={defaults.image}
-        title={defaults.title}
-        description={defaults.description}
-        subtitle={defaults.subtitle}
-        width={text("Default Width", defaults.width)}
-        height={text("Default Height", defaults.height)}
+        image={samples.image}
+        title={samples.title}
+        description={samples.description}
+        subtitle={samples.subtitle}
+        width={text("Default Width", samples.width)}
+        height={text("Default Height", samples.height)}
       />
       <CoolCard
-        image={defaults.image}
-        title={defaults.title}
-        description={defaults.description}
-        subtitle={defaults.subtitle}
-        width={text("Custom Width1", "400px")}
-        height={text("Custom Height1", "400px")}
+        image={samples.image}
+        title={samples.title}
+        description={samples.description}
+        subtitle={samples.subtitle}
+        width={text("Custom Width1", "250px")}
+        height={text("Custom Height1", "250px")}
       />
       <CoolCard
-        image={defaults.image}
-        title={defaults.title}
-        description={defaults.description}
-        subtitle={defaults.subtitle}
+        image={samples.image}
+        title={samples.title}
+        description={samples.description}
+        subtitle={samples.subtitle}
         width={text("Custom Width2", "300px")}
         height={text("Custom Height3", "400px")}
       />
-    </>
+    </div>
   ));
