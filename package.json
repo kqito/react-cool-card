@@ -15,7 +15,8 @@
     "clean": "rimraf ./dist",
     "release": "np",
     "storybook": "start-storybook -s ./public  -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "prepublishOnly": "npm run build"
   },
   "keywords": [
     "react",
