@@ -22,6 +22,8 @@ const Text = styled.div`
 
   padding: 1.25rem;
   background-color: ${props => props.theme.backgroundColor};
+  text-align: left;
+  font-size: 1rem;
 `;
 
 const SubTitle = styled.p`
