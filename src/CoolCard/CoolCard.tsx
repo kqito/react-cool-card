@@ -17,12 +17,16 @@ export const CoolCard: React.FC<CoolCardProps> = (props: CoolCardProps) => {
 
   const CoolCardContents = (
     <>
-      <Image src={image} alt={imageAlt || ""} />
-      <Text>
-        {subtitle && <SubTitle>{subtitle}</SubTitle>}
-        <Title>{title}</Title>
+      <Image className="CoolCard-image" src={image} alt={imageAlt || ""} />
+      <Text className="CoolCard-text">
+        {subtitle && (
+          <SubTitle className="CoolCard-text__subtitle">{subtitle}</SubTitle>
+        )}
+        <Title className="CoolCard-text__title">{title}</Title>
         <DescriptionWrapper>
-          <Description>{description}</Description>
+          <Description className="CoolCard-text__description">
+            {description}
+          </Description>
         </DescriptionWrapper>
       </Text>
     </>
@@ -31,11 +35,16 @@ export const CoolCard: React.FC<CoolCardProps> = (props: CoolCardProps) => {
   return (
     <ThemeProvider theme={props}>
       {link ? (
-        <CoolCardA href={link} rel="noopener noreferrer" target="_blank">
+        <CoolCardA
+          className="CoolCard"
+          href={link}
+          rel="noopener noreferrer"
+          target="_blank"
+        >
           {CoolCardContents}
         </CoolCardA>
       ) : (
-        <CoolCardDiv>{CoolCardContents}</CoolCardDiv>
+        <CoolCardDiv className="CoolCard">{CoolCardContents}</CoolCardDiv>
       )}
     </ThemeProvider>
   );
