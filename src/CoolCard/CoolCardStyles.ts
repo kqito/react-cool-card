@@ -19,7 +19,6 @@ const Text = styled.div`
   flex-direction: column;
   justify-content: center;
   z-index: 2;
-
   padding: 1.25rem;
   background-color: ${props => props.theme.backgroundColor};
   text-align: left;
@@ -31,12 +30,18 @@ const SubTitle = styled.p`
   white-space: nowrap;
   opacity: 0.7;
   margin: 0 0 0.3rem 0;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
 `;
 
 const Title = styled.p`
   font-weight: bold;
   font-size: 1.8rem;
   margin: 0;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
 `;
 
 const DescriptionWrapper = styled.div`
