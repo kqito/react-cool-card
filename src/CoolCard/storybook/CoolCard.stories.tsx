@@ -16,6 +16,7 @@ const samples: CoolCardProps = {
   backgroundColor: "#ffffff",
   color: "#000000",
   animationDuration: 500,
+  fontSize: "1rem",
   width: "400px",
   height: "300px"
 };
@@ -26,10 +27,10 @@ storiesOf("CoolCard", module)
     docs: { page: mdx }
   })
   .add("Samples", () => (
-    <div>
+    <div style={{ fontSize: "10px" }}>
       <CoolCard
         image="/corgi.jpg"
-        title="A Corgi is so Cute !!"
+        title="The Corgi is so Cute !!"
         description="It makes me feel appeased..."
         backgroundColor="#f48fb1"
         color="#fafafa"
@@ -140,6 +141,24 @@ storiesOf("CoolCard", module)
         description={samples.description}
         subtitle={samples.subtitle}
         animationDuration={number("Custom animation duration2", 2000)}
+      />
+    </div>
+  ))
+  .add("Font size", () => (
+    <div>
+      <CoolCard
+        image={samples.image}
+        title={samples.title}
+        description={samples.description}
+        subtitle={samples.subtitle}
+        fontSize={text("Default font size", samples.fontSize)}
+      />
+      <CoolCard
+        image={samples.image}
+        title={samples.title}
+        description={samples.description}
+        subtitle={samples.subtitle}
+        fontSize={text("Custom font size1", "12px")}
       />
     </div>
   ))

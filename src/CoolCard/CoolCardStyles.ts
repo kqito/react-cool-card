@@ -23,6 +23,7 @@ const Text = styled.div`
   background-color: ${props => props.theme.backgroundColor};
   text-align: left;
   font-size: 1rem;
+  font-size: ${props => props.theme.fontSize};
 `;
 
 const SubTitle = styled.p`
@@ -38,6 +39,7 @@ const SubTitle = styled.p`
 const Title = styled.p`
   font-weight: bold;
   font-size: 1.8rem;
+  font-size: calc(${props => props.theme.fontSize} * 1.8);
   margin: 0;
   white-space: nowrap;
   text-overflow: ellipsis;

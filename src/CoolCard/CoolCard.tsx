@@ -57,6 +57,7 @@ CoolCard.defaultProps = {
   backgroundColor: "#ffffff",
   color: "#000000",
   animationDuration: 500,
+  fontSize: "1rem",
   width: "400px",
   height: "300px"
 };

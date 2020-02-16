@@ -8,6 +8,7 @@ export type CoolCardProps = {
   backgroundColor?: string;
   color?: string;
   animationDuration?: number;
+  fontSize?: string;
   width?: string;
   height?: string;
 };
