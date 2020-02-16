@@ -41,8 +41,8 @@ storiesOf("CoolCard", module)
         description="React-cool-card was developed by kqito. If you like, please use it !!!"
         link={samples.link}
         subtitle={samples.link}
-        backgroundColor="#ffb74d"
-        color="#fafafa"
+        backgroundColor="#212121"
+        color="#ffffff"
         width="800px"
         height="400px"
       />
