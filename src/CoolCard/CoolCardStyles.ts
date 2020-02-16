@@ -19,7 +19,9 @@ const Text = styled.div`
   flex-direction: column;
   justify-content: center;
   z-index: 2;
-  padding: 1.25rem;
+  padding: 1rem 1.25rem;
+  padding: ${props => props.theme.fontSize}
+    calc(${props => props.theme.fontSize} * 1.25);
   background-color: ${props => props.theme.backgroundColor};
   text-align: left;
   font-size: 1rem;
@@ -31,6 +33,7 @@ const SubTitle = styled.p`
   white-space: nowrap;
   opacity: 0.7;
   margin: 0 0 0.3rem 0;
+  margin: 0 0 calc(${props => props.theme.fontSize} * 0.3) 0;
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
@@ -56,6 +59,7 @@ const Description = styled.p`
   overflow-wrap: break-word;
   word-wrap: break-word;
   margin: 0.3rem 0 0 0;
+  margin: calc(${props => props.theme.fontSize} * 0.3) 0 0 0;
 `;
 
 const BaseCoolCard = styled.div`
