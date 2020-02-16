@@ -2,6 +2,8 @@
 
 Simple card component for react.
 
+![Demo](https://user-images.githubusercontent.com/29191111/74602466-100cce00-50ec-11ea-9ab1-0580accd2b75.gif)
+
 ## Installation
 Your can install the package from npm.
 ```
