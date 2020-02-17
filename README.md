@@ -39,7 +39,7 @@ export const Example = () => (
 |backgroundColor|string \| undefined|#ffffff|Support hex format.
 |color|string \| undefined|#000000|Support hex format.
 |animationDuration|number \| undefined|500|Animation duration on mouse hover.
-|fontSize|string \| undefined|1rem|The font size of the component.
+|fontSize|string \| undefined|1rem|The base font size of the component.
 |width|string \| undefined|400px|The width of the component.
 |height|string \| undefined|300px|The height of the component.
 
