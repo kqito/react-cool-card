@@ -1,5 +1,8 @@
 # react-cool-card
 
+![build status](https://github.com/kqito/react-cool-card/workflows/Node.js%20CI/badge.svg)
+[![npm version](https://badge.fury.io/js/react-cool-card.svg)](https://badge.fury.io/js/react-cool-card)
+
 Simple card component for react.
 
 ![Demo](https://user-images.githubusercontent.com/29191111/74602466-100cce00-50ec-11ea-9ab1-0580accd2b75.gif)
