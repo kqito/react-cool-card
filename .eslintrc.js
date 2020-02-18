@@ -28,6 +28,7 @@ module.exports = {
   },
   rules: {
     "@typescript-eslint/explicit-function-return-type": 0,
+    "react/prop-types": [2, { ignore: ["children"] }],
     "import/extensions": ["error", "always", { ts: "never", tsx: "never" }],
     "import/prefer-default-export": "off",
     "import/no-extraneous-dependencies": [

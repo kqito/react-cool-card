@@ -15,37 +15,36 @@ import {
 export const CoolCard: React.FC<CoolCardProps> = (props: CoolCardProps) => {
   const { image, title, description, subtitle, link, imageAlt } = props;
 
-  const CoolCardContents = (
-    <>
-      <Image className="CoolCard-image" src={image} alt={imageAlt || ""} />
-      <Text className="CoolCard-text">
-        {subtitle && (
-          <SubTitle className="CoolCard-text__subtitle">{subtitle}</SubTitle>
-        )}
-        <Title className="CoolCard-text__title">{title}</Title>
-        <DescriptionWrapper>
-          <Description className="CoolCard-text__description">
-            {description}
-          </Description>
-        </DescriptionWrapper>
-      </Text>
-    </>
-  );
+  const CoolCardRoot: React.FC = ({ children }) =>
+    link ? (
+      <CoolCardA
+        className="CoolCard"
+        href={link}
+        rel="noopener noreferrer"
+        target="_blank"
+      >
+        {children}
+      </CoolCardA>
+    ) : (
+      <CoolCardDiv className="CoolCard">{children}</CoolCardDiv>
+    );
 
   return (
     <ThemeProvider theme={props}>
-      {link ? (
-        <CoolCardA
-          className="CoolCard"
-          href={link}
-          rel="noopener noreferrer"
-          target="_blank"
-        >
-          {CoolCardContents}
-        </CoolCardA>
-      ) : (
-        <CoolCardDiv className="CoolCard">{CoolCardContents}</CoolCardDiv>
-      )}
+      <CoolCardRoot>
+        <Image className="CoolCard-image" src={image} alt={imageAlt || ""} />
+        <Text className="CoolCard-text">
+          {subtitle && (
+            <SubTitle className="CoolCard-text__subtitle">{subtitle}</SubTitle>
+          )}
+          <Title className="CoolCard-text__title">{title}</Title>
+          <DescriptionWrapper>
+            <Description className="CoolCard-text__description">
+              {description}
+            </Description>
+          </DescriptionWrapper>
+        </Text>
+      </CoolCardRoot>
     </ThemeProvider>
   );
 };
