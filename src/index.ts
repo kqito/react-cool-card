@@ -1,3 +1,3 @@
-import { CoolCard } from "./CoolCard";
+import { CoolCard } from "./components/CoolCard";
 
 export default CoolCard;

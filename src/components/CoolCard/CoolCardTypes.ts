@@ -1,14 +1,11 @@
 export type CoolCardProps = {
-  image: string;
-  title: string;
-  description: string;
-  subtitle?: string;
   link?: string;
-  imageAlt?: string;
+  animationDuration?: number;
   backgroundColor?: string;
   color?: string;
-  animationDuration?: number;
   fontSize?: string;
   width?: string;
   height?: string;
+
+  children: React.ReactNode;
 };
