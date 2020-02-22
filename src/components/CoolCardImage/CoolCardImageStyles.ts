@@ -5,6 +5,7 @@ const Image = styled.img`
   height: ${props => props.theme.height};
   object-fit: cover;
   z-index: -1;
+  user-select: none;
 
   transition: ${props => props.theme.animationDuration}ms;
 `;
