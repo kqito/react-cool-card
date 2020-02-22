@@ -18,7 +18,7 @@ This is a simple example.
 
 ```javascript
 import React from "react";
-import CoolCard from "react-cool-card";
+import { CoolCard, CoolCardImage, CoolCardText } from "react-cool-card";
 
 export const Example = () => (
   <CoolCard>
