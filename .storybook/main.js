@@ -3,7 +3,6 @@ const path = require("path");
 module.exports = {
   addons: [
     "@storybook/react",
-    "@storybook/addon-actions/register",
     "@storybook/addon-knobs/register",
     {
       name: "@storybook/preset-typescript",
