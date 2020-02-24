@@ -3,7 +3,7 @@ import { rgba } from "polished";
 import { Image } from "../CoolCardImage/CoolCardImageStyles";
 import { DescriptionWrapper } from "../CoolCardText/CoolCardTextStyles";
 
-const BaseCoolCard = styled.div`
+export const BaseCoolCard = styled.div`
   position: relative;
   width: ${props => props.theme.width};
   height: ${props => props.theme.height};

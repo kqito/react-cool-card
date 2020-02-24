@@ -1,10 +1,10 @@
 import React from "react";
 import { storiesOf } from "@storybook/react";
-import { action } from "@storybook/addon-actions";
 import { text, number, object } from "@storybook/addon-knobs";
 import { CoolCard } from "../components/CoolCard";
 import { CoolCardImage } from "../components/CoolCardImage";
 import { CoolCardText } from "../components/CoolCardText";
+import { CoolCardEmoji } from "../components/CoolCardEmoji";
 import mdx from "./CoolCard.mdx";
 
 storiesOf("CoolCard", module)
@@ -34,6 +34,24 @@ storiesOf("CoolCard", module)
           description="React-cool-card was developed by kqito. If you like, please use it !!!"
           subtitle="https://github.com/kqito/react-cool-card"
         />
+      </CoolCard>
+    </div>
+  ))
+  .add("Emoji", () => (
+    <div>
+      <CoolCard>
+        <CoolCardEmoji emoji="😄" />
+        <CoolCardText title="title" description="description" />
+      </CoolCard>
+      <CoolCard>
+        <CoolCardEmoji
+          emoji="😄"
+          styles={object("Custom styles", { transform: "scale(2)" })}
+          stylesOnHover={object("Custom stylesOnHover", {
+            transform: "rotate(180deg) scale(0.8)"
+          })}
+        />
+        <CoolCardText title="title" description="description" />
       </CoolCard>
     </div>
   ))
