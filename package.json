@@ -84,9 +84,11 @@
     "eslint-plugin-react-hooks": "^1.7.0",
     "fork-ts-checker-webpack-plugin": "^4.0.2",
     "hasky": "^3.0.2",
+    "husky": "^4.2.3",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^24.9.0",
     "jest-dom": "^4.0.0",
+    "lint-staged": "^10.0.7",
     "np": "^5.2.1",
     "npm-run-all": "^4.1.5",
     "prettier": "^1.19.1",
@@ -128,7 +130,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "list-staged",
+      "pre-commit": "lint-staged",
       "pre-push": "npm test",
       "...": "..."
     }
