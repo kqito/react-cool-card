@@ -21,6 +21,16 @@ storiesOf("CoolCard", module)
           description="It makes me feel appeased..."
         />
       </CoolCard>
+      <CoolCard>
+        <CoolCardEmoji
+          emoji="😄"
+          stylesOnHover={{ transform: "rotate(360deg) scale(0.2)" }}
+        />
+        <CoolCardText
+          title="Emoji magic !!!"
+          description="Rotateeeeeeeeeeeeee"
+        />
+      </CoolCard>
       <CoolCard
         link="https://github.com/kqito/react-cool-card"
         backgroundColor="#212121"
@@ -46,9 +56,11 @@ storiesOf("CoolCard", module)
       <CoolCard>
         <CoolCardEmoji
           emoji="😄"
-          styles={object("Custom styles", { transform: "scale(2)" })}
+          styles={object("Custom styles", {
+            transform: "rotate(0deg) scale(1.2)"
+          })}
           stylesOnHover={object("Custom stylesOnHover", {
-            transform: "rotate(180deg) scale(0.8)"
+            transform: "rotate(360deg) scale(0.2)"
           })}
         />
         <CoolCardText title="title" description="description" />
