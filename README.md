@@ -5,7 +5,7 @@
 
 Simple card component for react.
 
-![Demo](https://user-images.githubusercontent.com/29191111/74602466-100cce00-50ec-11ea-9ab1-0580accd2b75.gif)
+![Demo](https://user-images.githubusercontent.com/29191111/75340780-778a0100-58d6-11ea-96a8-18a941e65ca6.gif)
 
 ## Installation
 Your can install the package from npm.
@@ -14,7 +14,9 @@ npm install react-cool-card
 ```
 
 ## Usage
-This is a simple example.
+### `CoolCardImage`
+This is a simple `CoolCardImage` example.
+
 
 ```javascript
 import React from "react";
@@ -23,6 +25,25 @@ import { CoolCard, CoolCardImage, CoolCardText } from "react-cool-card";
 export const Example = () => (
   <CoolCard>
     <CoolCardImage src="/sample.jpg" alt="sample" />
+    <CoolCardText
+      title="This is a title."
+      description="This is a description."
+    />
+  </CoolCard>
+);
+```
+
+### `CoolCardEmoji`
+This is a simple `CoolCardEmoji` example.
+
+
+```javascript
+import React from "react";
+import { CoolCard, CoolCardEmoji, CoolCardText } from "react-cool-card";
+
+export const Example = () => (
+  <CoolCard>
+    <CoolCardEmoji emoji="😄" />
     <CoolCardText
       title="This is a title."
       description="This is a description."
@@ -49,12 +70,21 @@ export const Example = () => (
 Same as `img` tag
 
 
+### `CoolCardEmoji` component
+| Property | Type | Default | Description |
+|-|:-:|:-:|-|
+|emoji|string|-|The displayed characters. **NOTE: Only one character can be specified.**
+|styles|React.CSSProperties \| undefined|{}|The CoolCardEmoji's style.
+|stylesOnHover|React.CSSProperties \| undefined|{}|The CoolCardEmoji's style on hover.
+
+
 ### `CoolCardText` component
 | Property | Type | Default | Description |
 |-|:-:|:-:|-|
 |title|string \| ReactElement|-|The title of the component.
 |description|string \| ReactElement|-|The description of the component.
 |subtitle|string \| ReactElement \| undefined|""|The subtitle of the component. This appears on mouse hover.
+
 
 Also, You can check the works with storybook. Please follow the steps below.
 1. ```git clone https://github.com/kqito/react-cool-card```
