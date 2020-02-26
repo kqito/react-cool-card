@@ -1,7 +1,7 @@
 import React from "react";
 import { ThemeProvider } from "styled-components";
 import { CoolCardProps } from "./CoolCardTypes";
-import { CoolCardDiv, CoolCardA } from "./CoolCardStyles";
+import { CoolCardDiv, linkAttrs } from "./CoolCardStyled";
 
 export const CoolCard: React.FC<CoolCardProps> = (props: CoolCardProps) => {
   const { link, children } = props;
@@ -9,9 +9,9 @@ export const CoolCard: React.FC<CoolCardProps> = (props: CoolCardProps) => {
   return (
     <ThemeProvider theme={props}>
       {link ? (
-        <CoolCardA href={link} rel="noopener noreferrer" target="_blank">
+        <CoolCardDiv as="a" href={link} {...linkAttrs}>
           {children}
-        </CoolCardA>
+        </CoolCardDiv>
       ) : (
         <CoolCardDiv>{children}</CoolCardDiv>
       )}

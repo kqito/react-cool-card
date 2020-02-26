@@ -1,6 +1,6 @@
 import React from "react";
 import { CoolCardEmojiProps } from "./CoolCardEmojiTypes";
-import { Emoji } from "./CoolCardEmojiStyles";
+import { Emoji } from "./CoolCardEmojiStyled";
 
 function emojiCount(emoji: string) {
   return Array.from(emoji.split(/[\ufe00-\ufe0f]/).join("")).length;

@@ -1,9 +1,8 @@
+import React from "react";
 import styled from "styled-components";
 import { rgba } from "polished";
-import { Image } from "../CoolCardImage/CoolCardImageStyles";
-import { DescriptionWrapper } from "../CoolCardText/CoolCardTextStyles";
 
-export const BaseCoolCard = styled.div`
+const CoolCardDiv = styled.div`
   position: relative;
   width: ${props => props.theme.width};
   height: ${props => props.theme.height};
@@ -30,15 +29,6 @@ export const BaseCoolCard = styled.div`
     &:after {
       background-color: ${props => rgba(props.theme.backgroundColor, 0.3)};
     }
-
-    ${Image} {
-      transform: scale(1.1);
-    }
-
-    ${DescriptionWrapper} {
-      opacity: 1;
-      max-height: ${props => props.theme.height};
-    }
   }
 
   * {
@@ -47,10 +37,10 @@ export const BaseCoolCard = styled.div`
   }
 `;
 
-const CoolCardDiv = styled(BaseCoolCard)``;
+const linkAttrs: React.AnchorHTMLAttributes<HTMLAnchorElement> = {
+  style: { cursor: "pointer" },
+  rel: "noopener noreferrer",
+  target: "_blank"
+};
 
-const CoolCardA = styled(BaseCoolCard.withComponent("a"))`
-  cursor: pointer;
-`;
-
-export { CoolCardDiv, CoolCardA };
+export { CoolCardDiv, linkAttrs };

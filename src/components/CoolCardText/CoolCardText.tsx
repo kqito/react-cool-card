@@ -6,7 +6,7 @@ import {
   Title,
   DescriptionWrapper,
   Description
-} from "./CoolCardTextStyles";
+} from "./CoolCardTextStyled";
 
 export const CoolCardText: React.FC<CoolCardTextProps> = ({
   title,
