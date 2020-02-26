@@ -1,6 +1,6 @@
 {
   "name": "react-cool-card",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Simple card component for react",
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",
