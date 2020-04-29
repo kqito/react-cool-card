@@ -1,7 +1,10 @@
 import resolve from "@rollup/plugin-node-resolve";
 import typescript from "rollup-plugin-typescript2";
-import babel from "rollup-plugin-babel";
+import babel from "@rollup/plugin-babel";
 import pkg from "./package.json";
+
+/* eslint @typescript-eslint/no-var-requires: 0 */
+const { presets, plugins } = require("./babel.config.js");
 
 export default {
   input: "src/index.ts",
@@ -16,14 +19,12 @@ export default {
     }
   ],
   plugins: [
-    resolve({
-      extensions: [".ts", ".tsx"]
-    }),
+    resolve({}),
     typescript(),
     babel({
-      extensions: [".ts", ".tsx"],
-      runtimeHelpers: true,
-      exclude: "node_modules/**"
+      babelHelpers: "bundled",
+      presets,
+      plugins
     })
   ],
   external: [
