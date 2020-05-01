@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { CoolCardDiv } from "../CoolCard/CoolCardStyled";
+import { CoolCardDiv, CoolCardAnchor } from "../CoolCard/CoolCardStyled";
 
 const Text = styled.div`
   position: absolute;
@@ -46,7 +46,8 @@ const DescriptionWrapper = styled.div`
   opacity: 0;
   max-height: 0;
 
-  ${CoolCardDiv}:hover & {
+  ${CoolCardDiv}:hover &,
+  ${CoolCardAnchor}:hover & {
     opacity: 1;
     max-height: ${props => props.theme.height};
   }

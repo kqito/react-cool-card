@@ -1,9 +1,10 @@
 import React from "react";
 import { render } from "@testing-library/react";
-import { CoolCard } from "./CoolCard";
-import { CoolCardDivProps } from "./CoolCardTypes";
+import { CoolCardLink } from "./CoolCardLink";
+import { CoolCardAnchorProps } from "./CoolCardTypes";
 
-const test: CoolCardDivProps = {
+const test: CoolCardAnchorProps = {
+  href: "href",
   animationDuration: 500,
   color: "#000000",
   fontSize: "1rem",
@@ -16,15 +17,17 @@ const test: CoolCardDivProps = {
 
 describe("CoolCard", () => {
   describe("Verify root element by each props", () => {
-    it("should render root DIV element", () => {
-      const { container } = render(<CoolCard>{test.children}</CoolCard>);
+    it("expect A element if specify 'link' prop", () => {
+      const { container } = render(
+        <CoolCardLink href={test.href}>{test.children}</CoolCardLink>
+      );
 
       const root = container.firstElementChild;
       if (!root) {
         throw new Error();
       }
 
-      expect(root.tagName).toBe("DIV");
+      expect(root.tagName).toBe("A");
     });
   });
 });

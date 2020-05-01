@@ -1,10 +1,16 @@
 import React from "react";
 import { ThemeProvider } from "styled-components";
-import { CoolCardDivProps } from "./CoolCardTypes";
-import { CoolCardDiv } from "./CoolCardStyled";
+import { CoolCardAnchorProps } from "./CoolCardTypes";
+import { CoolCardAnchor } from "./CoolCardStyled";
 
-export const CoolCard: React.FC<CoolCardDivProps> = (
-  props: CoolCardDivProps
+const defaultLinkAttrs: React.AnchorHTMLAttributes<HTMLAnchorElement> = {
+  style: { cursor: "pointer" },
+  rel: "noopener noreferrer",
+  target: "_blank"
+};
+
+export const CoolCardLink: React.FC<CoolCardAnchorProps> = (
+  props: CoolCardAnchorProps
 ) => {
   const {
     children,
@@ -28,12 +34,14 @@ export const CoolCard: React.FC<CoolCardDivProps> = (
 
   return (
     <ThemeProvider theme={themeProps}>
-      <CoolCardDiv {...rest}>{children}</CoolCardDiv>
+      <CoolCardAnchor {...{ ...defaultLinkAttrs, ...rest }}>
+        {children}
+      </CoolCardAnchor>
     </ThemeProvider>
   );
 };
 
-CoolCard.defaultProps = {
+CoolCardLink.defaultProps = {
   backgroundColor: "#ffffff",
   color: "#000000",
   fontSize: "1rem",

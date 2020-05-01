@@ -1,7 +1,7 @@
 import React from "react";
 import { storiesOf } from "@storybook/react";
 import { text, number, object } from "@storybook/addon-knobs";
-import { CoolCard } from "../components/CoolCard";
+import { CoolCard, CoolCardLink } from "../components/CoolCard";
 import { CoolCardImage } from "../components/CoolCardImage";
 import { CoolCardText } from "../components/CoolCardText";
 import { CoolCardEmoji } from "../components/CoolCardEmoji";
@@ -31,8 +31,8 @@ storiesOf("CoolCard", module)
           description="Rotateeeeeeeeeeeeee"
         />
       </CoolCard>
-      <CoolCard
-        link="https://github.com/kqito/react-cool-card"
+      <CoolCardLink
+        href="https://github.com/kqito/react-cool-card"
         backgroundColor="#212121"
         color="#ffffff"
         width="800px"
@@ -44,7 +44,7 @@ storiesOf("CoolCard", module)
           description="React-cool-card was developed by kqito. If you like, please use it !!!"
           subtitle="https://github.com/kqito/react-cool-card"
         />
-      </CoolCard>
+      </CoolCardLink>
     </div>
   ))
   .add("Emoji", () => (
@@ -69,16 +69,18 @@ storiesOf("CoolCard", module)
   ))
   .add("Link", () => (
     <div>
-      <CoolCard link={text("Default", CoolCard.defaultProps?.link ?? "")}>
-        <CoolCardImage src="/corgi.jpg" alt="corgi" />
-        <CoolCardText title="title" description="description" />
-      </CoolCard>
-      <CoolCard
-        link={text("Custom", "https://github.com/kqito/react-cool-card")}
+      <CoolCardLink
+        href={text("Default", CoolCardLink.defaultProps?.href ?? "")}
       >
         <CoolCardImage src="/corgi.jpg" alt="corgi" />
         <CoolCardText title="title" description="description" />
-      </CoolCard>
+      </CoolCardLink>
+      <CoolCardLink
+        href={text("Custom", "https://github.com/kqito/react-cool-card")}
+      >
+        <CoolCardImage src="/corgi.jpg" alt="corgi" />
+        <CoolCardText title="title" description="description" />
+      </CoolCardLink>
     </div>
   ))
   .add("Subtitle", () => (

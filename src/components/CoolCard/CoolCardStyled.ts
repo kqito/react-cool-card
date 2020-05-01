@@ -1,8 +1,8 @@
 import React from "react";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { rgba } from "polished";
 
-const CoolCardDiv = styled.div`
+const CoolCardStyle = css`
   position: relative;
   width: ${props => props.theme.width};
   height: ${props => props.theme.height};
@@ -37,10 +37,9 @@ const CoolCardDiv = styled.div`
   }
 `;
 
-const linkAttrs: React.AnchorHTMLAttributes<HTMLAnchorElement> = {
-  style: { cursor: "pointer" },
-  rel: "noopener noreferrer",
-  target: "_blank"
-};
-
-export { CoolCardDiv, linkAttrs };
+export const CoolCardDiv = styled.div`
+  ${CoolCardStyle}
+`;
+export const CoolCardAnchor = styled.a`
+  ${CoolCardStyle}
+`;
