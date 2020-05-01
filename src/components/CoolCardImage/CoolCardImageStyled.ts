@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { CoolCardDiv } from "../CoolCard/CoolCardStyled";
+import { CoolCardDiv, CoolCardAnchor } from "../CoolCard/CoolCardStyled";
 
 const Image = styled.img`
   & {
@@ -14,7 +14,8 @@ const Image = styled.img`
 
     transition: ${props => props.theme.animationDuration}ms;
   }
-  ${CoolCardDiv}:hover & {
+  ${CoolCardDiv}:hover &,
+  ${CoolCardAnchor}:hover & {
     transform: scale(1.1);
   }
 `;

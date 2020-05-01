@@ -1,6 +1,6 @@
 import styled, { css } from "styled-components";
 import { CoolCardEmojiProps } from "./CoolCardEmojiTypes";
-import { CoolCardDiv } from "../CoolCard/CoolCardStyled";
+import { CoolCardDiv, CoolCardAnchor } from "../CoolCard/CoolCardStyled";
 
 const Emoji = styled.p<CoolCardEmojiProps>`
   margin: 0;
@@ -14,7 +14,7 @@ const Emoji = styled.p<CoolCardEmojiProps>`
 
   ${props => props.styles && css({ ...props.styles })}
 
-  ${CoolCardDiv}:hover & {
+  ${CoolCardDiv}:hover &, ${CoolCardAnchor}:hover & {
     ${props => props.stylesOnHover && css({ ...props.stylesOnHover })}
   }
 `;

@@ -33,6 +33,25 @@ export const Example = () => (
 );
 ```
 
+### `CoolCardLink`
+This is a simple `CoolCardLink` example.
+
+
+```javascript
+import React from "react";
+import { CoolCardLink, CoolCardImage, CoolCardText } from "react-cool-card";
+
+export const Example = () => (
+  <CoolCardLink href="https://github.com/kqito/react-cool-card">
+    <CoolCardImage src="/sample.jpg" alt="sample" />
+    <CoolCardText
+      title="This is a title."
+      description="This is a description."
+    />
+  </CoolCard>
+);
+```
+
 ### `CoolCardEmoji`
 This is a simple `CoolCardEmoji` example.
 
@@ -53,11 +72,24 @@ export const Example = () => (
 ```
 
 ## Props
-
 ### `CoolCard` component
+The same attributes as the `div` tag can be used. In addition, the following other attributes can be used.
+
 | Property | Type | Default | Description |
 |-|:-:|:-:|-|
-|link|string \| undefined|""|Go to the link when clicked.
+|backgroundColor|string \| undefined|#ffffff|Support hex format.
+|color|string \| undefined|#000000|Support hex format.
+|animationDuration|number \| undefined|500|Animation duration on mouse hover.
+|fontSize|string \| undefined|1rem|The base font size of the component.
+|width|string \| undefined|400px|The width of the component.
+|height|string \| undefined|300px|The height of the component.
+
+
+### `CoolCardLink` component
+The same attributes as the `a` tag can be used. In addition, the following other attributes can be used.
+
+| Property | Type | Default | Description |
+|-|:-:|:-:|-|
 |backgroundColor|string \| undefined|#ffffff|Support hex format.
 |color|string \| undefined|#000000|Support hex format.
 |animationDuration|number \| undefined|500|Animation duration on mouse hover.
